@@ -1,0 +1,148 @@
+type: grid
+title: Niveaux de Pollen
+columns: 3
+square: false
+cards:
+  - type: custom:mushroom-template-card
+    entity: sensor.pollen_aulne
+    primary: Aulne
+    secondary: >
+      {% set conc = states('sensor.pollen_aulne') |
+      regex_findall_index('Conc:\\s*([\\d\\.]+)', 0) %}
+      {{conc}}
+    icon: mdi:flower
+    layout: vertical
+    icon_color: >
+      {% set conc = states('sensor.pollen_aulne') |
+      regex_findall_index('Conc:\\s*([\\d\\.]+)', 0) | int %} {% set code =
+      states('sensor.pollen_aulne') | regex_findall_index('Code:\\s*(\\d+)', 0)
+      | int %}  {% if code == 1 and conc == 0 %}
+        white
+      {% elif code == 1 and conc != 0 %}
+        green
+      {% elif code == 2 and conc != 0 %}
+        yellow
+      {% elif code == 3 and conc != 0 %}
+        orange
+      {% else %}
+        red
+      {% endif %}
+  - type: custom:mushroom-template-card
+    entity: sensor.pollen_bouleau
+    primary: Bouleau
+    secondary: >
+      {% set conc = states('sensor.pollen_bouleau') |
+      regex_findall_index('Conc:\\s*([\\d\\.]+)', 0) %}
+      {{conc}}
+    icon: mdi:flower
+    layout: vertical
+    icon_color: >
+      {% set conc = states('sensor.pollen_bouleau') |
+      regex_findall_index('Conc:\\s*([\\d\\.]+)', 0) | int %} {% set code =
+      states('sensor.pollen_bouleau') | regex_findall_index('Code:\\s*(\\d+)',
+      0) | int %}  {% if code == 1 and conc == 0 %}
+        white
+      {% elif code == 1 and conc != 0 %}
+        green
+      {% elif code == 2 and conc != 0 %}
+        yellow
+      {% elif code == 3 and conc != 0 %}
+        orange
+      {% else %}
+        red
+      {% endif %}
+  - type: custom:mushroom-template-card
+    entity: sensor.pollen_graminees
+    primary: Graminées
+    secondary: >
+      {% set conc = states('sensor.pollen_graminees') |
+      regex_findall_index('Conc:\\s*([\\d\\.]+)', 0) %}
+      {{conc}}
+    icon: mdi:flower
+    layout: vertical
+    icon_color: >
+      {% set conc = states('sensor.pollen_graminees') |
+      regex_findall_index('Conc:\\s*([\\d\\.]+)', 0) | int %} {% set code =
+      states('sensor.pollen_graminees') | regex_findall_index('Code:\\s*(\\d+)',
+      0) | int %}  {% if code == 1 and conc == 0 %}
+        white
+      {% elif code == 1 and conc != 0 %}
+        green
+      {% elif code == 2 and conc != 0 %}
+        yellow
+      {% elif code == 3 and conc != 0 %}
+        orange
+      {% else %}
+        red
+      {% endif %}
+  - type: custom:mushroom-template-card
+    entity: sensor.pollen_olivier
+    primary: Olivier
+    secondary: >
+      {% set conc = states('sensor.pollen_olivier') |
+      regex_findall_index('Conc:\\s*([\\d\\.]+)', 0) %} {{conc}}
+    icon: mdi:flower
+    layout: vertical
+    icon_color: >
+      {% set conc = states('sensor.pollen_olivier') |
+      regex_findall_index('Conc:\\s*([\\d\\.]+)', 0) | int %} {% set code =
+      states('sensor.pollen_olivier') | regex_findall_index('Code:\\s*(\\d+)',
+      0) | int %}  {% if code == 1 and conc == 0 %}
+        white
+      {% elif code == 1 and conc != 0 %}
+        green
+      {% elif code == 2 and conc != 0 %}
+        yellow
+      {% elif code == 3 and conc != 0 %}
+        orange
+      {% else %}
+        red
+      {% endif %}
+  - type: custom:mushroom-template-card
+    entity: sensor.pollen_armoise
+    primary: Armoise
+    secondary: >
+      {% set conc = states('sensor.pollen_armoise') |
+      regex_findall_index('Conc:\\s*([\\d\\.]+)', 0) %}
+      {{conc}}
+    icon: mdi:flower
+    layout: vertical
+    icon_color: >
+      {% set conc = states('sensor.pollen_armoise') |
+      regex_findall_index('Conc:\\s*([\\d\\.]+)', 0) | int %} {% set code =
+      states('sensor.pollen_armoise') | regex_findall_index('Code:\\s*(\\d+)',
+      0) | int %}  {% if code == 1 and conc == 0 %}
+        white
+      {% elif code == 1 and conc != 0 %}
+        green
+      {% elif code == 2 and conc != 0 %}
+        yellow
+      {% elif code == 3 and conc != 0 %}
+        orange
+      {% else %}
+        red
+      {% endif %}
+  - type: custom:mushroom-template-card
+    entity: sensor.pollen_ambroisie
+    primary: Ambroisie
+    secondary: >
+      {% set conc = states('sensor.pollen_ambroisie') |
+      regex_findall_index('Conc:\\s*([\\d\\.]+)', 0) %}
+      {{conc}}
+    icon: mdi:flower
+    layout: vertical
+    icon_color: >
+      {% set conc = states('sensor.pollen_ambroisie') |
+      regex_findall_index('Conc:\\s*([\\d\\.]+)', 0) | int %} {% set code =
+      states('sensor.pollen_ambroisie') | regex_findall_index('Code:\\s*(\\d+)',
+      0) | int %}  {% if code == 1 and conc == 0 %}
+        white
+      {% elif code == 1 and conc != 0 %}
+        green
+      {% elif code == 2 and conc != 0 %}
+        yellow
+      {% elif code == 3 and conc != 0 %}
+        orange
+      {% else %}
+        red
+      {% endif %}
