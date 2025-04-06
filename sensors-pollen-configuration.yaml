@@ -1,0 +1,37 @@
+rest:
+  - resource: "https://data.atmo-france.org/geoserver/ind_pol/ows?REQUEST=GetFeatureInfo&SERVICE=WMS&SORTBY=date_dif%20D&BBOX=254458.8671613518%2C6245853.669322215%2C265465.79923441715%2C6254605.709060868&HEIGHT=458&WIDTH=576&LAYERS=ind_pol%3Aind_national_pol&QUERY_LAYERS=ind_pol%3Aind_national_pol&INFO_FORMAT=application%2Fjson&X=315&Y=216"
+    method: GET
+    scan_interval: 21600
+    headers:
+      User-Agent: "Mozilla/5.0"
+    sensor:
+    - name: "Pollen Aulne"
+      unique_id: "pollen_aulne"
+      value_template: >
+        Code: {{ value_json.features[0].properties.code_aul }},
+        Conc: {{ value_json.features[0].properties.conc_aul }}
+    - name: "Pollen Bouleau"
+      unique_id: "pollen_bouleau"
+      value_template: >
+        Code: {{ value_json.features[0].properties.code_boul }},
+        Conc: {{ value_json.features[0].properties.conc_boul }}
+    - name: "Pollen Olivier"
+      unique_id: "pollen_olivier"
+      value_template: >
+        Code: {{ value_json.features[0].properties.code_oliv }},
+        Conc: {{ value_json.features[0].properties.conc_oliv }}
+    - name: "Pollen Graminées"
+      unique_id: "pollen_graminees"
+      value_template: >
+        Code: {{ value_json.features[0].properties.code_gram }},
+        Conc: {{ value_json.features[0].properties.conc_gram }}
+    - name: "Pollen Armoise"
+      unique_id: "pollen_armoise"
+      value_template: >
+        Code: {{ value_json.features[0].properties.code_arm }},
+        Conc: {{ value_json.features[0].properties.conc_arm }}
+    - name: "Pollen Ambroisie"
+      unique_id: "pollen_ambroisie"
+      value_template: >
+        Code: {{ value_json.features[0].properties.code_ambr }},
+        Conc: {{ value_json.features[0].properties.conc_ambr }}
